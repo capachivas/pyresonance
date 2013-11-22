@@ -72,7 +72,7 @@ class YourAppPolicy(BasePolicy):
       match_allow_flows = self.fsm.get_policy('allow')
 
       # Match incoming flow with each flow space
-      p1 = if_(match_block_flows, self.allow(), drop)
+      p1 = if_(match_block_flows, self.allow(), drop) 
       p2 = if_(match_allow_flows, self.block(), drop)
 
       # Parallel composition 
